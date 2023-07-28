@@ -3,8 +3,15 @@
 int main(){
     int valor,notas;
 
-    printf("Quanto voce quer sacar? ");
+    printf("Quanto voce quer sacar(entre 10 e 600)? ");
     scanf("%d",&valor);
+
+    if(valor < 10 || valor > 600){
+        while(valor < 10 || valor > 600){
+            printf("Valor fora dos limites informe outro: ");
+            scanf("%d",&valor);
+        }
+    }
 
     if(valor > 100){
         notas = valor / 100;
