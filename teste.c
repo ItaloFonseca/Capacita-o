@@ -1,18 +1,7 @@
 #include<stdio.h>
 
-int main(){
-    int valor,notas;
-
-    printf("Quanto voce quer sacar(entre 10 e 600)? ");
-    scanf("%d",&valor);
-
-    if(valor < 10 || valor > 600){
-        while(valor < 10 || valor > 600){
-            printf("Valor fora dos limites informe outro: ");
-            scanf("%d",&valor);
-        }
-    }
-
+void notasImp(int valor){
+    int notas;
     if(valor > 100){
         notas = valor / 100;
         printf("Notas de 100: %d\n",notas);
@@ -38,5 +27,22 @@ int main(){
         printf("Notas de 1: %d\n",notas);
     }
     valor = valor % 1;
+}
+
+int main(){
+    int valor;
+
+    printf("Quanto voce quer sacar(entre 10 e 600)? ");
+    scanf("%d",&valor);
+
+    if(valor < 10 || valor > 600){
+        while(valor < 10 || valor > 600){
+            printf("Valor fora dos limites informe outro: ");
+            scanf("%d",&valor);
+        }
+    }
+
+    notasImp(valor);
+
     return 0;
 }
